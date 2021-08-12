@@ -4,6 +4,8 @@
 
 este sera mi proyecto personal donde intentare crear mi Portafolio  para subir mis avances como programador
 
+en el momento solo tengo una plantilla que conseguí y modifique.
+
 Este portafolio estará actualizandose conforme avance en conocimientos, de igual formas el código de mis proyectos estarán en mi repositorio de GitHub.
 
 Hasta el momento tengo proyectado aprender sobre estas tecnologías:
