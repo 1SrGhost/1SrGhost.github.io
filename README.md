@@ -1,5 +1,18 @@
 ### Hi there 👋
 
+#Portafolio de Andres Perez
+
+este sera mi proyecto personal donde intentare crear mi Portafolio  para subir mis avances como programador
+
+Este portafolio estará actualizandose conforme avance en conocimientos, de igual formas el código de mis proyectos estarán en mi repositorio de GitHub.
+
+Hasta el momento tengo proyectado aprender sobre estas tecnologías:
+
+HTML
+CSS
+JS
+En el portafolio encontraran todas mis redes sociales, estoy abierto para recibir feedback.
+
 <!--
 **1SrGhost/1SrGhost** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
