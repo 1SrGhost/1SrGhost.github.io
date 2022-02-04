@@ -17,9 +17,10 @@
 .card-exp{
     
     max-width: 120rem;
-    margin-top: auto;
+    margin-top: 20px;
+    margin-bottom:20px;
     background-color: rgba(191, 191, 191 );
-
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
