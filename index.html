@@ -3,20 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Andrés Pérez | Frontend Developer VTEX IO</title>
+    <title>Andrés Pérez | Frontend Developer VTEX IO y React</title>
     <meta
       name="description"
-      content="Frontend Developer especializado en VTEX IO, React y experiencias e-commerce de alto rendimiento."
+      content="Portafolio de Andrés Pérez, Frontend Developer especializado en VTEX IO, React y e-commerce, con experiencia en marcas LATAM y equipos de desarrollo, diseño y calidad."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap"
-      rel="stylesheet"
+    <meta name="author" content="Andrés Pérez" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#080a0f" />
+    <link rel="canonical" href="https://1srghost.github.io/" />
+    <link rel="icon" href="assets/img/favicon.ico" sizes="48x48" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="Portafolio de Andrés Pérez" />
+    <meta
+      property="og:title"
+      content="Andrés Pérez | Frontend Developer VTEX IO y React"
     />
+    <meta
+      property="og:description"
+      content="Frontend Developer especializado en VTEX IO, React y e-commerce, con experiencia en marcas LATAM y trabajo colaborativo con equipos de desarrollo, diseño y calidad."
+    />
+    <meta property="og:url" content="https://1srghost.github.io/" />
+    <meta
+      property="og:image"
+      content="https://1srghost.github.io/assets/img/profile.webp"
+    />
+    <meta property="og:image:alt" content="Andrés Pérez, Frontend Developer" />
+    <meta property="profile:first_name" content="Andrés" />
+    <meta property="profile:last_name" content="Pérez" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Andrés Pérez | Frontend Developer VTEX IO y React"
+    />
+    <meta
+      name="twitter:description"
+      content="Frontend Developer especializado en VTEX IO, React y e-commerce, con experiencia en marcas LATAM y equipos multidisciplinarios."
+    />
+    <meta
+      name="twitter:image"
+      content="https://1srghost.github.io/assets/img/profile.webp"
+    />
+
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/navigation.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "url": "https://1srghost.github.io/",
+        "name": "Portafolio de Andrés Pérez",
+        "publisher": {
+          "@id": "https://1srghost.github.io/#andres-perez"
+        },
+        "mainEntity": {
+          "@id": "https://1srghost.github.io/#andres-perez",
+          "@type": "Person",
+          "name": "Andrés Pérez",
+          "alternateName": "1SrGhost",
+          "jobTitle": "Frontend Developer VTEX IO y React",
+          "description": "Frontend Developer especializado en VTEX IO, React y experiencias e-commerce de alto rendimiento.",
+          "image": "https://1srghost.github.io/assets/img/profile.webp",
+          "url": "https://1srghost.github.io/",
+          "sameAs": [
+            "https://github.com/1SrGhost",
+            "https://www.linkedin.com/in/andresperez98/"
+          ],
+          "knowsAbout": [
+            "VTEX IO",
+            "React",
+            "TypeScript",
+            "JavaScript",
+            "E-commerce",
+            "Frontend Development",
+            "Web Performance",
+            "Responsive Web Design",
+            "HTML5",
+            "CSS3"
+          ]
+        }
+      }
+    </script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
     <header class="nav">
       <div class="container nav__inner">
         <a class="brand" href="#top" aria-label="Ir al inicio">
@@ -24,12 +101,36 @@
           <span>Andrés Pérez</span>
         </a>
 
-        <nav class="nav__links" aria-label="Navegación principal">
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Abrir menú de navegación"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav
+          class="nav__links"
+          id="primary-navigation"
+          aria-label="Navegación principal"
+        >
           <a href="#work">Proyectos</a>
           <a href="#real-stores">Operación</a>
           <a href="#experience">Experiencia</a>
+          <a href="#testimonials">Testimonios</a>
           <a href="#stack">Stack</a>
           <a href="#contact">Contacto</a>
+          <a
+            class="nav__mobile-cta"
+            href="assets/Andres_Perez_CV.pdf"
+            target="_blank"
+            rel="noreferrer"
+            >Abrir CV</a
+          >
         </nav>
 
         <a
@@ -42,7 +143,8 @@
       </div>
     </header>
 
-    <main id="top">
+    <main id="main-content">
+      <span id="top" class="anchor-target" aria-hidden="true"></span>
       <section class="hero">
         <div class="container hero__grid">
           <div>
@@ -50,8 +152,12 @@
               >Disponible</span
             >
             <h1>
-              Frontend Developer
-              <span class="gradient-text">VTEX IO & React</span>
+              <span class="hero-title__line">Frontend</span>
+              <span class="hero-title__line">Developer</span>
+              <span class="gradient-text">
+                <span class="hero-title__line">VTEX IO &</span>
+                <span class="hero-title__line">React</span>
+              </span>
             </h1>
             <p class="hero__copy">
               Desarrollo experiencias e-commerce escalables y de alto
@@ -83,10 +189,13 @@
             <div class="profile">
               <div class="profile__image-wrap">
                 <img
-                  src="assets/img/profile.jpg"
+                  src="assets/img/profile.webp"
                   alt="Foto de perfil de Andrés Pérez"
+                  width="800"
+                  height="749"
                   loading="eager"
-                  title="Foto de perfil de Andrés Pérez"
+                  fetchpriority="high"
+                  decoding="async"
                 />
               </div>
               <div class="profile__footer">
@@ -125,8 +234,10 @@
                 <img
                   src="assets/img/projects/haceb.webp"
                   alt="Haceb ecommerce"
+                  width="500"
+                  height="239"
                   loading="lazy"
-                  title="Haceb ecommerce"
+                  decoding="async"
                 />
               </div>
               <div class="work-card__body">
@@ -154,8 +265,10 @@
                 <img
                   src="assets/img/projects/recamier.webp"
                   alt="Recamier ecommerce"
+                  width="500"
+                  height="239"
                   loading="lazy"
-                  title="Recamier ecommerce"
+                  decoding="async"
                 />
               </div>
               <div class="work-card__body">
@@ -182,10 +295,11 @@
               <div class="work-card__media">
                 <img
                   src="assets/img/projects/sony.webp"
-                
                   alt="Sony Colombia ecommerce"
+                  width="500"
+                  height="237"
                   loading="lazy"
-                  title="Sony Colombia ecommerce"
+                  decoding="async"
                 />
               </div>
               <div class="work-card__body">
@@ -212,8 +326,10 @@
                 <img
                   src="assets/img/projects/fctech.webp"
                   alt="FC Tech ecommerce"
+                  width="500"
+                  height="237"
                   loading="lazy"
-                  title="FC Tech ecommerce"
+                  decoding="async"
                 />
               </div>
               <div class="work-card__body">
@@ -241,8 +357,10 @@
                 <img
                   src="assets/img/projects/vah.webp"
                   alt="Vah Perú ecommerce"
+                  width="500"
+                  height="282"
                   loading="lazy"
-                  title="Vah Perú ecommerce"
+                  decoding="async"
                 />
               </div>
               <div class="work-card__body">
@@ -264,8 +382,10 @@
                 <img
                   src="assets/img/projects/heroesApp.webp"
                   alt="Heroes App"
+                  width="500"
+                  height="234"
                   loading="lazy"
-                  title="Heroes App"
+                  decoding="async"
                 />
               </div>
               <div class="work-card__body">
@@ -303,7 +423,7 @@
           </div>
 
           <div class="store-grid">
-            <div class="store-card">
+            <article class="store-card">
               <div class="work-card__meta">
                 <span class="tag">Soporte operativo</span>
                 <span class="tag">VTEX IO</span>
@@ -317,9 +437,9 @@
               <a href="https://www.haceb.com/" target="_blank" rel="noreferrer"
                 >Ver tienda →</a
               >
-            </div>
+            </article>
 
-            <div class="store-card">
+            <article class="store-card">
               <div class="work-card__meta">
                 <span class="tag">Soporte operativo</span>
                 <span class="tag">VTEX IO</span>
@@ -336,9 +456,9 @@
                 rel="noreferrer"
                 >Ver tienda →</a
               >
-            </div>
+            </article>
 
-            <div class="store-card">
+            <article class="store-card">
               <div class="work-card__meta">
                 <span class="tag">Soporte operativo</span>
                 <span class="tag">VTEX IO</span>
@@ -355,9 +475,9 @@
                 rel="noreferrer"
                 >Ver tienda →</a
               >
-            </div>
+            </article>
 
-            <div class="store-card">
+            <article class="store-card">
               <div class="work-card__meta">
                 <span class="tag">Soporte operativo</span>
                 <span class="tag">VTEX IO</span>
@@ -371,9 +491,9 @@
                 rel="noreferrer"
                 >Ver tienda →</a
               >
-            </div>
+            </article>
 
-            <div class="store-card">
+            <article class="store-card">
               <div class="work-card__meta">
                 <span class="tag">Soporte operativo</span>
                 <span class="tag">VTEX IO</span>
@@ -390,9 +510,9 @@
                 rel="noreferrer"
                 >Ver tienda →</a
               >
-            </div>
+            </article>
 
-            <div class="store-card">
+            <article class="store-card">
               <div class="work-card__meta">
                 <span class="tag">Soporte operativo</span>
                 <span class="tag">VTEX IO</span>
@@ -408,7 +528,7 @@
                 rel="noreferrer"
                 >Ver tienda →</a
               >
-            </div>
+            </article>
           </div>
         </div>
       </section>
@@ -417,53 +537,220 @@
           <div class="section-head">
             <div>
               <p class="section-kicker">Experiencia</p>
-              <h2>Frontend</h2>
+              <h2>Frontend eCommerce Engineer</h2>
             </div>
             <p class="section-description">
-              Experiencia en desarrollo y mantenimiento de plataformas
-              e-commerce, trabajando con equipos multidisciplinarios en entornos
-              ágiles.
+              Desarrollo interfaces, componentes y experiencias de compra para
+              marcas LATAM sobre VTEX IO, React y ecosistemas e-commerce en
+              producción.
             </p>
+          </div>
+
+          <div class="experience-metrics" aria-label="Resumen de experiencia">
+            <div>
+              <strong>3+</strong>
+              <span>Años construyendo frontend para e-commerce</span>
+            </div>
+            <div>
+              <strong>15+</strong>
+              <span>Tiendas VTEX intervenidas y mantenidas</span>
+            </div>
+            <div>
+              <strong>LATAM</strong>
+              <span>Marcas atendidas en operación regional</span>
+            </div>
+            <div>
+              <strong>VTEX IO</strong>
+              <span>Especialización en storefront y apps React</span>
+            </div>
           </div>
 
           <div class="experience-list">
             <article class="experience-item">
+              <div class="experience-item__marker" aria-hidden="true"></div>
               <div class="experience-item__date">Jul 2023 — Actualidad</div>
-              <div>
-                <h3>Frontend Developer Jr. Analyst</h3>
-                <h4>BlackSip</h4>
-                <p>
-                  Desarrollo y mantenimiento de tiendas VTEX IO para marcas
-                  LATAM. Implementación de componentes personalizados, landings,
-                  PLPs, PDPs, headers, footers, minicart y ajustes post go-live.
-                </p>
+              <div class="experience-item__content">
+                <div class="experience-item__heading">
+                  <div>
+                    <h3>Frontend Developer Jr. Analyst</h3>
+                    <h4>BlackSip · eCommerce & VTEX IO</h4>
+                  </div>
+                  <span class="experience-item__focus">Storefronts LATAM</span>
+                </div>
+                <ul class="experience-bullets">
+                  <li>
+                    Desarrollo y mantenimiento de tiendas VTEX IO en producción
+                    para marcas de retail, tecnología, belleza y consumo.
+                  </li>
+                  <li>
+                    Implementación de componentes personalizados, landings, PLP,
+                    PDP, headers, footers, minicart y ajustes post go-live.
+                  </li>
+                  <li>
+                    Soporte funcional y visual orientado a performance,
+                    consistencia de marca y experiencia mobile-first.
+                  </li>
+                </ul>
+                <div class="experience-tags" aria-label="Tecnologías utilizadas">
+                  <span>VTEX IO</span><span>React</span><span>TypeScript</span
+                  ><span>GraphQL</span><span>Master Data</span
+                  ><span>Connectif</span>
+                </div>
+                <div class="experience-brands" aria-label="Marcas relacionadas">
+                  <span>Haceb</span><span>Recamier</span><span>Sony</span
+                  ><span>FC Tech</span><span>Vah</span><span>Women'secret</span>
+                </div>
               </div>
             </article>
 
             <article class="experience-item">
+              <div class="experience-item__marker" aria-hidden="true"></div>
               <div class="experience-item__date">Ene 2023 — Jul 2023</div>
-              <div>
-                <h3>Frontend Developer Trainee</h3>
-                <h4>BlackSip</h4>
-                <p>
-                  Formación intensiva en tecnologías frontend, lectura de
-                  diseños en Figma, buenas prácticas, soporte en componentes y
-                  primeros desarrollos sobre VTEX IO.
-                </p>
+              <div class="experience-item__content">
+                <div class="experience-item__heading">
+                  <div>
+                    <h3>Frontend Developer Trainee</h3>
+                    <h4>BlackSip · Formación eCommerce</h4>
+                  </div>
+                  <span class="experience-item__focus">Base VTEX IO</span>
+                </div>
+                <ul class="experience-bullets">
+                  <li>
+                    Formación intensiva en frontend, buenas prácticas,
+                    maquetación responsive y lectura de diseños en Figma.
+                  </li>
+                  <li>
+                    Soporte en componentes, ajustes visuales y primeros
+                    desarrollos sobre Store Framework y Store Theme.
+                  </li>
+                </ul>
+                <div class="experience-tags" aria-label="Tecnologías utilizadas">
+                  <span>JavaScript</span><span>React</span><span>VTEX IO</span
+                  ><span>Figma</span><span>Git</span><span>QA funcional</span>
+                </div>
               </div>
             </article>
 
             <article class="experience-item">
+              <div class="experience-item__marker" aria-hidden="true"></div>
               <div class="experience-item__date">Mar 2022 — Sep 2022</div>
-              <div>
-                <h3>Frontend Developer</h3>
-                <h4>NTT DATA</h4>
-                <p>
-                  Desarrollo de componentes Angular, integración con Firebase y
-                  trabajo en soluciones internas como chatbot con QnA Maker,
-                  LUIS, Microsoft Teams y Azure.
-                </p>
+              <div class="experience-item__content">
+                <div class="experience-item__heading">
+                  <div>
+                    <h3>Frontend Developer</h3>
+                    <h4>NTT DATA · Soluciones internas</h4>
+                  </div>
+                  <span class="experience-item__focus">Angular & Azure</span>
+                </div>
+                <ul class="experience-bullets">
+                  <li>
+                    Desarrollo de componentes Angular e integración con Firebase
+                    para soluciones internas.
+                  </li>
+                  <li>
+                    Participación en experiencias conversacionales con QnA
+                    Maker, LUIS, Microsoft Teams y servicios Azure.
+                  </li>
+                </ul>
+                <div class="experience-tags" aria-label="Tecnologías utilizadas">
+                  <span>Angular</span><span>Firebase</span><span>Azure</span
+                  ><span>C#</span><span>Microsoft Teams</span>
+                </div>
               </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">Testimonios</p>
+              <h2>Lo que destacan de mi trabajo</h2>
+            </div>
+            <p class="section-description">
+              Comentarios de profesionales con los que he colaborado en
+              proyectos de desarrollo, diseño, calidad y operación e-commerce.
+            </p>
+          </div>
+
+          <div class="testimonials-grid">
+            <article class="testimonial-card testimonial-card--featured">
+              <span class="testimonial-card__quote" aria-hidden="true">“</span>
+              <blockquote class="testimonial-card__text">
+                Profesional dedicado, proactivo y propositivo frente a los
+                desafíos. Se comunica muy bien con clientes, entiende
+                requerimientos y trabaja para entregar a tiempo con calidad.
+              </blockquote>
+              <footer class="testimonial-card__footer">
+                <span class="testimonial-card__role">Líder de eCommerce</span>
+                <span class="testimonial-card__label"
+                  >Recomendación profesional</span
+                >
+              </footer>
+            </article>
+
+            <article class="testimonial-card">
+              <span class="testimonial-card__quote" aria-hidden="true">“</span>
+              <blockquote class="testimonial-card__text">
+                Demostró responsabilidad, compromiso y disposición para
+                aprender, con sólido manejo de React, JavaScript, TypeScript,
+                CSS y Git, además de una actitud colaborativa.
+              </blockquote>
+              <footer class="testimonial-card__footer">
+                <span class="testimonial-card__role"
+                  >Project Manager · Scrum · VTEX</span
+                >
+                <span class="testimonial-card__label"
+                  >Recomendación profesional</span
+                >
+              </footer>
+            </article>
+
+            <article class="testimonial-card">
+              <span class="testimonial-card__quote" aria-hidden="true">“</span>
+              <blockquote class="testimonial-card__text">
+                Trabaja con perseverancia hasta encontrar soluciones, mantiene
+                una actitud positiva y colabora de cerca con diseño para lograr
+                mejores resultados.
+              </blockquote>
+              <footer class="testimonial-card__footer">
+                <span class="testimonial-card__role">UX/UI Designer</span>
+                <span class="testimonial-card__label"
+                  >Recomendación profesional</span
+                >
+              </footer>
+            </article>
+
+            <article class="testimonial-card">
+              <span class="testimonial-card__quote" aria-hidden="true">“</span>
+              <blockquote class="testimonial-card__text">
+                Profesional responsable y dedicado; fue un apoyo importante para
+                entregar un producto de calidad y aportar valor dentro de
+                proyectos ágiles.
+              </blockquote>
+              <footer class="testimonial-card__footer">
+                <span class="testimonial-card__role">QA Specialist</span>
+                <span class="testimonial-card__label"
+                  >Recomendación profesional</span
+                >
+              </footer>
+            </article>
+
+            <article class="testimonial-card">
+              <span class="testimonial-card__quote" aria-hidden="true">“</span>
+              <blockquote class="testimonial-card__text">
+                Su curiosidad, perseverancia y búsqueda de nuevas soluciones lo
+                hacen destacar. Investiga tecnologías y perfecciona su trabajo
+                con atención al detalle.
+              </blockquote>
+              <footer class="testimonial-card__footer">
+                <span class="testimonial-card__role">Frontend Developer</span>
+                <span class="testimonial-card__label"
+                  >Recomendación profesional</span
+                >
+              </footer>
             </article>
           </div>
         </div>
@@ -479,34 +766,38 @@
           </div>
 
           <div class="stack-grid">
-            <div class="stack-card">
-              <strong>Frontend</strong
+            <article class="stack-card">
+              <strong>Frontend Engineering</strong
               ><span
-                >JavaScript, TypeScript, React, HTML5, CSS3, Sass, Styled
-                Components.</span
+                >Construyo interfaces con React, TypeScript y JavaScript,
+                cuidando performance, accesibilidad y escalabilidad en
+                productos e-commerce.</span
               >
-            </div>
-            <div class="stack-card">
-              <strong>VTEX IO</strong
+            </article>
+            <article class="stack-card">
+              <strong>VTEX IO & Commerce</strong
               ><span
-                >Store Framework, componentes custom, PLP/PDP, minicart,
-                checkout y GraphQL.</span
+                >Especializado en Store Framework, Store Theme, PLP, PDP,
+                checkout, Master Data, GraphQL, apps React y componentes
+                personalizados.</span
               >
-            </div>
-            <div class="stack-card">
-              <strong>Workflow</strong
+            </article>
+            <article class="stack-card">
+              <strong>Integraciones & Delivery</strong
               ><span
-                >Git, GitLab, CodeCommit, Figma, Postman, SCRUM y QA
-                manual.</span
+                >Integro herramientas como Connectif y trabajo con Git, GitHub,
+                CodeCommit, Figma y Postman dentro de flujos Scrum y QA
+                funcional.</span
               >
-            </div>
-            <div class="stack-card">
-              <strong>Anteriormente</strong
+            </article>
+            <article class="stack-card">
+              <strong>Base técnica ampliada</strong
               ><span
-                >Angular, Firebase, Azure DevOps, Bootstrap, QnA Maker y
-                C#.</span
+                >Experiencia previa con Angular, Bootstrap, C#, Astro y
+                Tailwind CSS, útil para adaptarme rápido a stacks y equipos
+                diversos.</span
               >
-            </div>
+            </article>
           </div>
         </div>
       </section>
@@ -516,7 +807,7 @@
           <div class="contact-card">
             <div>
               <p class="section-kicker">Contacto</p>
-              <h2>¿Tienes un proyecto <br>e-commerce?</h2>
+              <h2>¿Tienes un proyecto <br />e-commerce?</h2>
               <p>
                 Estoy disponible para colaborar en desarrollos con VTEX IO,
                 React y soluciones enfocadas en performance y experiencia de
