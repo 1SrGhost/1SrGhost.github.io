@@ -27,6 +27,7 @@ box-sizing:border-box
 html {
 scroll-behavior:smooth;
 scroll-padding-top:96px;
+overflow-x:hidden;
 overflow-x:clip
 }
 
@@ -36,10 +37,19 @@ font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Sego
 color:var(--text);
 background:radial-gradient(circle at top left,#ff4d4d38,transparent 34rem),radial-gradient(circle at 80% 10%,#7c3aed40,transparent 32rem),linear-gradient(180deg,#080a0f 0%,#0b0e14 45%,#080a0f 100%);
 min-height:100vh;
+overflow-x:hidden;
 overflow-x:clip
 }
 
-body > :not(script) {
+@supports not (overflow: clip) {
+html,
+body {
+overflow-x:hidden
+}
+}
+
+main,
+.footer {
 position:relative;
 z-index:1
 }
@@ -51,6 +61,7 @@ inset:0;
 pointer-events:none;
 background-image:linear-gradient(#ffffff09 1px,transparent 1px),linear-gradient(90deg,#ffffff09 1px,transparent 1px);
 background-size:54px 54px;
+-webkit-mask-image:linear-gradient(to bottom,black,transparent 75%);
 mask-image:linear-gradient(to bottom,black,transparent 75%);
 z-index:0
 }
@@ -130,6 +141,7 @@ padding:12px 14px;
 border:1px solid var(--line);
 border-radius:999px;
 background:#080a0fb8;
+-webkit-backdrop-filter:blur(18px);
 backdrop-filter:blur(18px);
 box-shadow:0 16px 60px #00000038
 }
@@ -245,6 +257,7 @@ radial-gradient(circle at 84% 60%,#7c3aed3d 0 2px,transparent 3px),
 linear-gradient(115deg,transparent 25%,#ffffff12 50%,transparent 75%);
 background-size:11rem 11rem,9rem 9rem,13rem 13rem,100% 100%;
 filter:blur(.2px);
+-webkit-mask-image:linear-gradient(90deg,transparent,black 18%,black 82%,transparent);
 mask-image:linear-gradient(90deg,transparent,black 18%,black 82%,transparent);
 opacity:.5;
 animation:hero-orbit 22s linear infinite;
@@ -286,7 +299,8 @@ margin:0;
 font-size:clamp(48px,8.2vw,108px);
 line-height:.9;
 letter-spacing:-.065em;
-text-wrap:balance
+text-wrap:balance;
+overflow-wrap:break-word
 }
 
 .hero-title__line {
@@ -856,19 +870,30 @@ font-size:14px
 
 /* Contact and footer */
 .contact {
-padding-bottom:clamp(62px,10vw,96px)
+padding:clamp(44px,7vw,72px) 0 clamp(56px,8vw,86px)
 }
 
 .contact-card {
-padding:clamp(24px,6vw,42px);
-border-radius:clamp(22px,5vw,32px);
+padding:clamp(22px,4vw,32px);
+border-radius:var(--radius);
 border:1px solid var(--line);
-background:linear-gradient(135deg,#ff4d4d2e,#7c3aed1f),#ffffff0f;
+background:
+linear-gradient(135deg,#ff4d4d18,#7c3aed14),
+#ffffff0b;
 display:grid;
-grid-template-columns:1fr auto;
-gap:clamp(18px,4vw,28px);
+grid-template-columns:minmax(0,1fr) auto;
+gap:clamp(20px,4vw,36px);
 align-items:center;
 box-shadow:var(--shadow)
+}
+
+.contact-card__content {
+max-width:680px
+}
+
+.contact-card h2 {
+font-size:clamp(28px,4vw,44px);
+line-height:1.04
 }
 
 .contact-card p {
@@ -878,11 +903,121 @@ max-width:620px;
 line-height:1.7
 }
 
+.contact-card__actions {
+display:flex;
+flex-direction:column;
+align-items:flex-end;
+gap:12px
+}
+
+.contact-card__email {
+color:#d1d5db;
+font-size:14px;
+font-weight:800;
+transition:color 180ms ease,transform 180ms ease
+}
+
+.contact-card__email:hover {
+color:var(--text);
+transform:translateX(2px)
+}
+
+.contact-card__email:focus-visible {
+outline:2px solid var(--primary);
+outline-offset:4px;
+border-radius:8px
+}
+
 .footer {
-padding:24px 0 40px;
+padding:24px 0 calc(40px + constant(safe-area-inset-bottom));
+padding:24px 0 calc(40px + env(safe-area-inset-bottom));
 color:var(--muted);
 border-top:1px solid var(--line);
 font-size:14px
+}
+
+body > .whatsapp-float {
+position:fixed;
+right:18px;
+bottom:18px;
+right:calc(18px + constant(safe-area-inset-right));
+bottom:calc(18px + constant(safe-area-inset-bottom));
+right:calc(18px + env(safe-area-inset-right));
+bottom:calc(18px + env(safe-area-inset-bottom));
+z-index:999;
+display:flex;
+align-items:center;
+gap:12px
+}
+
+.whatsapp-float__button {
+width:56px;
+height:56px;
+display:grid;
+place-items:center;
+border-radius:50%;
+border:1px solid #ffffff24;
+background:linear-gradient(135deg,#25d366,#128c4a);
+color:#06130b;
+box-shadow:0 16px 42px #00000059;
+transition:transform 180ms ease,box-shadow 180ms ease,filter 180ms ease
+}
+
+.whatsapp-float__button:hover {
+transform:translateY(-3px);
+box-shadow:0 20px 52px #00000070;
+filter:saturate(1.05)
+}
+
+.whatsapp-float__button:active {
+transform:translateY(-1px) scale(.98)
+}
+
+.whatsapp-float__button:focus-visible {
+outline:2px solid var(--text);
+outline-offset:4px
+}
+
+.whatsapp-float__icon {
+width:29px;
+height:29px;
+fill:currentColor
+}
+
+.whatsapp-float__tooltip {
+position:relative;
+max-width:190px;
+padding:9px 11px;
+border:1px solid var(--line);
+border-radius:12px;
+background:#080a0ff2;
+color:#e5e7eb;
+font-size:13px;
+font-weight:800;
+box-shadow:0 14px 36px #00000059;
+opacity:0;
+transform:translateX(8px);
+pointer-events:none;
+transition:opacity 180ms ease,transform 180ms ease
+}
+
+.whatsapp-float__tooltip::after {
+content:'';
+position:absolute;
+right:-6px;
+top:50%;
+width:10px;
+height:10px;
+border-top:1px solid var(--line);
+border-right:1px solid var(--line);
+background:#080a0ff2;
+transform:translateY(-50%) rotate(45deg)
+}
+
+.whatsapp-float:hover .whatsapp-float__tooltip,
+.whatsapp-float:focus-within .whatsapp-float__tooltip {
+opacity:1;
+transform:translateX(0)
 }
 
 /* Store cards */
@@ -1051,6 +1186,7 @@ border:1px solid var(--line);
 border-radius:20px;
 background:#080a0ff5;
 box-shadow:0 24px 60px #0009;
+-webkit-backdrop-filter:blur(18px);
 backdrop-filter:blur(18px)
 }
 
@@ -1092,6 +1228,10 @@ padding-top:clamp(58px,9vw,72px)
 
 .hero__grid,.contact-card {
 grid-template-columns:1fr
+}
+
+.contact-card__actions {
+align-items:flex-start
 }
 
 .hero__grid {
@@ -1186,6 +1326,41 @@ flex-direction:column
 
 .btn {
 width:100%
+}
+
+.contact-card {
+gap:18px
+}
+
+.contact-card__actions {
+width:100%
+}
+
+.contact-card__actions .btn {
+width:100%
+}
+
+.whatsapp-float {
+right:14px;
+bottom:14px;
+right:calc(14px + constant(safe-area-inset-right));
+bottom:calc(14px + constant(safe-area-inset-bottom));
+right:calc(14px + env(safe-area-inset-right));
+bottom:calc(14px + env(safe-area-inset-bottom))
+}
+
+.whatsapp-float__button {
+width:52px;
+height:52px
+}
+
+.whatsapp-float__icon {
+width:27px;
+height:27px
+}
+
+.whatsapp-float__tooltip {
+display:none
 }
 
 .profile__footer,.work-grid,.stack-grid {
@@ -1283,5 +1458,10 @@ transform:none
 body::after,
 .hero::before {
 animation:none
+}
+
+.whatsapp-float__button,
+.whatsapp-float__tooltip {
+transition:none
 }
 }
